@@ -14,9 +14,6 @@ dist-ssr
 .vite
 *.local
 
-# Vite Config
-vite.config.js
-
 # ESLint and Prettier Config
 eslint.config.js
 .prettierrc

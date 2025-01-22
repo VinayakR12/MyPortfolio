@@ -1,0 +1,223 @@
+
+ .protitle{
+  align-self: center;
+ }
+.pro1{
+
+  font-weight: 800; 
+  padding: 10px;
+
+  text-align: center; 
+  margin-bottom: 20px;
+  color: #ffffff; /* Text color */
+  border-radius: 12px; /* Smooth rounded corners */
+  box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.676);
+  text-shadow: 3px 3px 5px rgba(11, 0, 0, 0.806); /* Subtle text shadow */
+ min-width: 400px;
+ margin-bottom: 10px;
+  background: linear-gradient(159deg, rgba(8,146,208,1) 0%, rgba(75,0,130,1) 100%);
+  
+  font-size: 2rem;
+  margin-right: 25%;
+  margin-left: 25%;
+ 
+}
+
+
+/* .section1 {
+  background-color: blueviolet;
+  margin: 30px;
+  padding: 20px;
+  border-radius: 20px;
+  /* min-height: 100vh; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+} */
+
+.section1 {
+  background-color: rgba(138, 43, 226, 0.1); /* Semi-transparent blueviolet for glass effect */
+  margin: 30px;
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  color: #fff; /* Bright text for contrast */
+  backdrop-filter: blur(20px); /* Glass blur effect */
+  -webkit-backdrop-filter: blur(15px); /* Safari support */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6); /* Strong shadow for depth */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Glass edge for realism */
+  position: relative; /* To ensure shine effect stays above the element */
+  overflow: hidden; /* Hide content that overflows */
+}
+
+/* Shine effect */
+.section1::before {
+  content: "";
+  position: absolute;
+  top: -50%; /* Start off-screen */
+  left: -50%; /* Start off-screen */
+  width: 200%; /* Ensure shine covers the entire element */
+  height: 200%; /* Ensure shine covers the entire element */
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.2));
+  transform: rotate(45deg);
+  animation: shine-animation 5s ease-in-out infinite; /* Smooth and continuous shine effect */
+  opacity: 0.6; /* Subtle shine effect */
+  z-index: 0; /* Place it behind the content */
+}
+
+/* Shine animation */
+@keyframes shine-animation {
+  0% {
+    transform: translateX(-150%) rotate(45deg);
+  }
+  50% {
+    transform: translateX(0%) rotate(45deg);
+  }
+  100% {
+    transform: translateX(150%) rotate(45deg);
+  }
+}
+
+
+.project-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  padding: 0;
+  margin-top: 30px;
+}
+
+/* Project Card Styling */
+.project-card {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  background: #1f2937;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+}
+
+/* Image Section */
+.project-image img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  border-bottom: 2px solid #38bdf8;
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.1);
+}
+
+/* Content Section */
+.project-content {
+  padding: 20px;
+  background: linear-gradient(145deg, #1f2937, #273447);
+  color: #ffffff;
+  transition: background 0.3s ease-in-out;
+}
+
+.project-title {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+  color: #38bdf8;
+}
+
+.project-description {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.project-tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.tech-item {
+  background: rgba(56, 189, 248, 0.2);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  color: #38bdf8;
+}
+
+.project-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #38bdf8;
+  color: #1e293b;
+  font-weight: bold;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.project-link:hover {
+  background: #0284c7;
+  transform: scale(1.05);
+  color: #ffffff;
+}
+
+/* Hover Effect for Bottom Slide Details */
+.project-details {
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.8);
+  color: #ffffff;
+  padding: 15px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  border-top: 2px solid #38bdf8;
+  transition: bottom 0.4s ease-in-out;
+}
+
+.project-card:hover .project-details {
+  bottom: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .project-list {
+    flex-direction: column;
+    align-items: center;
+  }
+  .project-card {
+    position: relative;
+    width: 100%;
+    max-width: 380px;
+  }
+  .section1{
+    min-width: 120vw;
+  }
+
+}
+
+@media (max-width: 480px) {
+  .section1 h1 {
+    font-size: 2rem;
+  }
+
+  .project-card {
+    max-width: 90%;
+  }
+}

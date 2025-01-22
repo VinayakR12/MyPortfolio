@@ -1,0 +1,112 @@
+  .about-section {
+    margin: 30px;
+    border-radius: 20px;
+    padding: 40px 20px;
+    background: rgba(255, 255, 255, 0.1);  
+    color: #e2e8f0; /* Bright text for contrast */
+    backdrop-filter: blur(20px); /* Enhanced glass blur */
+    -webkit-backdrop-filter: blur(15px); /* Safari support */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6); /* Stronger shadow for depth */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Glass edge for realism */
+    overflow: hidden; /* Ensures shine stays within bounds */
+    position: relative;
+    text-align: center; /* Align text for better aesthetics */
+    z-index: 1; /* Content above shine effect */
+  }
+  
+  /* Shine effect */
+  .about-section::before {
+    content: "";
+    position: absolute;
+    top: -150%; 
+    left: -150%; 
+    width: 400%;
+    height: 400%; 
+    background: linear-gradient(
+      120deg,
+      rgba(255, 255, 255, 0.1) 0%,
+      rgba(255, 255, 255, 0.4) 50%,
+      rgba(255, 255, 255, 0.1) 100%
+    );
+    transform: rotate(45deg);
+    animation: shine-animation 5s ease-in-out infinite; 
+    pointer-events: none; 
+    opacity: 0.6; 
+    z-index: 0; 
+  }
+  
+
+  @keyframes shine-animation {
+    0% {
+      transform: translateX(-150%) rotate(45deg);
+    }
+    50% {
+      transform: translateX(0%) rotate(45deg);
+    }
+    100% {
+      transform: translateX(150%) rotate(45deg);
+    }
+  }
+  
+
+  .title31{
+
+    font-weight: 800; 
+    padding: 10px;
+  
+    text-align: center; 
+    margin-bottom: 20px;
+    color: #ffffff; 
+    border-radius: 12px; 
+    box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.676);
+    text-shadow: 3px 3px 5px rgba(11, 0, 0, 0.806); 
+   min-width: 400px;
+   margin-bottom: 10px;
+    background: linear-gradient(159deg, rgba(8,146,208,1) 0%, rgba(75,0,130,1) 100%);
+    
+    font-size: 2rem;
+    margin-right: 25%;
+    margin-left: 25%;
+   
+  }
+  
+
+  
+  .about-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .about-text {
+    margin-top: 20px;
+    font-size: 1.25rem;
+    line-height: 1.8;
+    text-align: justify;
+    margin-bottom: 30px;
+    font-family: 'Arial', sans-serif;
+    color: #cbd5e0;
+    letter-spacing: 0.5px;
+  }
+  
+  .contact-btn {
+    padding: 12px 30px;
+    background: rgb(8,146,208);
+background: linear-gradient(159deg, rgba(8,146,208,1) 0%, rgb(47, 2, 80) 100%);
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    cursor: pointer;
+
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.685); 
+  }
+  
+  @media (max-width: 768px) {
+    .about-section{
+      min-width:120vw;
+    }
+    .title31{
+    margin-left: -5px;
+    }
+  }

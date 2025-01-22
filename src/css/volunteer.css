@@ -1,0 +1,209 @@
+/* Glass effect for the vol container */
+.vol{
+  margin: 30px;
+  border-radius: 20px;
+  padding: 40px 20px;
+  background: rgba(255, 255, 255, 0.1);  
+  color: #e2e8f0; /* Bright text for contrast */
+  backdrop-filter: blur(20px); /* Enhanced glass blur */
+  -webkit-backdrop-filter: blur(15px); /* Safari support */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6); /* Stronger shadow for depth */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Glass edge for realism */
+  
+  text-align: center; /* Center-align the text */
+  z-index: 1; /* Content above shine effect */
+  position: relative; /* Ensure the shine effect appears over this element */
+  overflow: hidden; /* To ensure no extra content spills outside */
+  max-width: 96%;
+ 
+  
+}
+
+/* Shine effect */
+.vol::before {
+  content: "";
+  position: absolute;
+  top: -150%; /* Fully off-screen at start */
+  left: -150%; /* Fully off-screen at start */
+  width: 400%; /* Ensures no edges show */
+  height: 400%; /* Ensures no edges show */
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+  transform: rotate(45deg);
+  animation: shine-animation 5s ease-in-out infinite; /* Smooth and continuous animation */
+  pointer-events: none; /* Prevent interaction with the effect */
+  opacity: 0.6; /* Subtle shine effect */
+  z-index: 0; /* Behind the content */
+}
+
+/* Shine animation */
+@keyframes shine-animation {
+  0% {
+    transform: translateX(-150%) rotate(45deg);
+  }
+  50% {
+    transform: translateX(0%) rotate(45deg);
+  }
+  100% {
+    transform: translateX(150%) rotate(45deg);
+  }
+}
+
+/* Title Styling */
+.title23{
+
+  font-weight: 800; 
+  padding: 10px;
+
+  text-align: center; 
+  margin-bottom: 20px;
+  color: #ffffff; /* Text color */
+  border-radius: 12px; /* Smooth rounded corners */
+  box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.676);
+  text-shadow: 3px 3px 5px rgba(11, 0, 0, 0.806); /* Subtle text shadow */
+ min-width: 400px;
+ margin-bottom: 10px;
+  background: linear-gradient(159deg, rgba(8,146,208,1) 0%, rgba(75,0,130,1) 100%);
+  
+  font-size: 2rem;
+  margin-right: 25%;
+  margin-left: 25%;
+ 
+}
+
+/* Adjust title size for smaller screens */
+@media (max-width: 768px) {
+  .vol {
+    min-width: 120vw; /* Ensures it adapts to smaller screen width */
+  }
+  .title23 {
+    font-size: 2.5rem; 
+    padding: 9px 18px;
+    left:-100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title23{
+    font-size: 2rem; /* Even smaller font for mobile devices */
+    padding: 5px 10px;
+  }
+}
+
+/* Card Container Styling */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  width:99%;
+  justify-content: center;
+  text-align: justify;
+  gap: 15px;
+  padding: 10px;
+ 
+}
+
+/* Hover-fold card animation */
+.hover-fold {
+  background:#002387;
+  height: 200px;
+  margin: 10px auto;
+  position: relative;
+  width: 200px;
+  perspective: 1500px;
+  transition: transform 0.3s ease; /* Add a subtle hover effect */
+}
+
+.hover-fold:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 20px 10px #ffffff; 
+}
+
+.hover-fold h2 {
+  font-size: 14px;
+  margin: 0;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.hover-fold .top {
+  height: 50%;
+  transition: 0.6s ease-out;
+  transform: rotateX(0deg);
+  transform-origin: 0, 100%;
+  transform-style: preserve-3d;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  background-size: 100% 200%;
+  background-position: top; /* Show the top half of the image */
+}
+
+.hover-fold:hover .top {
+  top: 50%;
+  width: 100%;
+  transform: rotateX(-180deg);
+}
+
+.hover-fold .top .face {
+  backface-visibility: hidden;
+  position: absolute;
+}
+
+.hover-fold .back {
+  background: #002387;
+  height: 100%;
+  padding: 10px;
+  font-size: 12px;
+  line-height: 1.4;
+  transform: rotateX(180deg);
+  width: 100%;
+}
+
+.hover-fold .back p {
+  margin: 0;
+}
+
+.hover-fold .bottom {
+  background-size: 100% 200%;
+  background-position: bottom; /* Show the bottom half of the image */
+  height: 50%;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  z-index: 0;
+}
+
+/* Responsive styles for hover-fold cards */
+@media (max-width: 768px) {
+  .card-container {
+    justify-content: center;
+    width: 100%;
+    gap: 2px;
+  }
+
+  .hover-fold .back {
+    font-size: 2rem;
+  }
+
+  .hover-fold {
+    font-size: 0.3rem;
+    width: 190px;
+    height: 190px;
+  }
+
+  .backText {
+    font-size: 0.57rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hover-fold {
+    width: 150px;
+    height: 150px;
+  }
+}

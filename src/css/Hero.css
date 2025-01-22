@@ -1,0 +1,412 @@
+  .hero-section {
+    padding-top: 1%;
+    top: 70px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    margin: 30px;
+    margin-bottom: 110px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    backdrop-filter: blur(20px); /* Enhanced blur for frosted effect */
+    -webkit-backdrop-filter: blur(20px); /* Safari support */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5); /* Deep shadow for depth */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle glass border */
+    overflow: hidden;
+    text-align: justify;
+    color: #fff; /* Bright text for contrast */
+    position: relative;
+    z-index: 1; /* Ensures the content remains above shine effect */
+}
+
+/* Fullscreen shine effect */
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: -100%; /* Moves completely out of view initially */
+    left: -100%; /* Moves completely out of view initially */
+    width: 300%; /* Extends beyond the screen to avoid showing edges */
+    height: 300%; /* Extends beyond the screen to avoid showing edges */
+    background: linear-gradient(
+        120deg,
+        rgba(255, 255, 255, 0.2) 0%,
+        rgba(255, 255, 255, 0.5) 50%,
+        rgba(255, 255, 255, 0.2) 100%
+    );
+    transform: rotate(45deg);
+    animation: hero-shine 5s ease-in-out infinite; /* Smooth animation */
+    pointer-events: none; /* Prevent interaction with the effect */
+    opacity: 0.6; /* Subtle shine */
+    z-index: 0; /* Keeps it behind the content */
+}
+
+/* Enhanced shine animation */
+@keyframes hero-shine {
+    0% {
+        transform: translateX(-150%) rotate(45deg);
+    }
+    50% {
+        transform: translateX(-50%) rotate(45deg);
+    }
+    100% {
+        transform: translateX(150%) rotate(45deg);
+    }
+}
+
+.name {
+  font-family: 'Montserrat', sans-serif; /* Modern, professional font */
+  font-size: 4.5rem;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-top: 50px;
+
+  /* Gradient text effect */
+  background: linear-gradient(90deg, #FFD700, #ed95ff, #ffb709, #47e6ff, #fedc97,#ffffff);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientAnimation 6s infinite linear;
+
+  /* Adding shadow for depth */
+  text-shadow: 4px 4px 15px rgba(255, 249, 168, 0.588);
+
+  transition: transform 0.4s ease-in-out;
+}
+
+/* Hover effect */
+.name:hover {
+  transform: scale(1.1);
+  text-shadow: 3px 3px 20px rgba(255, 255, 255, 0.8);
+}
+
+/* Keyframe animation for color-changing effect */
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+
+  .floating-icons {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden; 
+  }
+  
+  .floating-icons .icon {
+    position: absolute;
+    font-size: 3rem;
+    color: rgba(255, 255, 255, 0.432);
+    animation: moveAroundScreen 30s infinite ease-in-out;
+    z-index: 2;
+  }
+  
+  @keyframes moveAroundScreen {
+    0% {
+      transform: translate3d(0, 0, 0);
+    }
+    25% {
+      transform: translate3d(calc(10vw), calc(10vh), 0);
+    }
+    50% {
+      transform: translate3d(calc(-10vw), calc(-10vh), 0);
+    }
+    75% {
+      transform: translate3d(calc(20vw), calc(-20vh), 0);
+    }
+    100% {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  
+  
+  .floating-icons .icon:nth-child(1) { top: 10%; left: 15%; animation-duration: 25s; }
+  .floating-icons .icon:nth-child(2) { top: 30%; left: 30%; animation-duration: 22s; }
+  .floating-icons .icon:nth-child(3) { top: 50%; left: 50%; animation-duration: 20s; }
+  .floating-icons .icon:nth-child(4) { top: 70%; left: 10%; animation-duration: 18s; }
+  .floating-icons .icon:nth-child(5) { top: 20%; left: 80%; animation-duration: 27s; }
+  .floating-icons .icon:nth-child(6) { top: 40%; left: 65%; animation-duration: 24s; }
+  .floating-icons .icon:nth-child(7) { top: 60%; left: 10%; animation-duration: 23s; }
+  .floating-icons .icon:nth-child(8) { top: 80%; left: 20%; animation-duration: 21s; }
+  .floating-icons .icon:nth-child(9) { top: 30%; left: 40%; animation-duration: 26s; }
+  .floating-icons .icon:nth-child(10) { top: 50%; left: 60%; animation-duration: 22s; }
+  .floating-icons .icon:nth-child(11) { top: 70%; left: 75%; animation-duration: 28s; }
+  .floating-icons .icon:nth-child(12) { top: 40%; left: 85%; animation-duration: 19s; }
+  .floating-icons .icon:nth-child(13) { top: 10%; left: 30%; animation-duration: 23s; }
+  .floating-icons .icon:nth-child(14) { top: 60%; left: 50%; animation-duration: 30s; }
+  .floating-icons .icon:nth-child(15) { top: 80%; left: 60%; animation-duration: 25s; }
+  .floating-icons .icon:nth-child(16) { top: 20%; left: 10%; animation-duration: 24s; }
+  .floating-icons .icon:nth-child(17) { top: 50%; left: 20%; animation-duration: 22s; }
+  .floating-icons .icon:nth-child(18) { top: 30%; left: 70%; animation-duration: 27s; }
+  .floating-icons .icon:nth-child(19) { top: 60%; left: 40%; animation-duration: 26s; }
+  .floating-icons .icon:nth-child(20) { top: 40%; left: 55%; animation-duration: 20s; }
+
+  .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+    max-width: 1200px;
+    width: 100%;
+    position: relative;
+  }
+  
+  .text-content {
+    padding-bottom:2%;
+    max-width: 800px;
+    color: #ffffff;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  }
+  
+  .text-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    color: #facc15;
+    font-weight: 700;
+  }
+  
+  .text-content h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #e0e7ff;
+  }
+  
+  .text-content p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: rgba(255, 255, 255, 0.9);
+  }
+  
+  .highlight {
+    color: #facc15;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  .btn-group {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .btn {
+    padding: 12px 25px;
+    font-size: 1rem;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .btn-primary {
+    background: #3b82f6;
+    color: #ffffff;
+    box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+  }
+  
+  .btn-primary:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.6);
+  }
+  
+  .btn-secondary {
+    background: #9333ea;
+    color: #ffffff;
+    box-shadow: 0 5px 15px rgba(147, 51, 234, 0.4);
+  }
+  
+  .btn-secondary:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(147, 51, 234, 0.6);
+  }
+  
+
+  .image-container img {
+    max-width: 190px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.687);
+    margin-bottom:125px;
+    margin-right:50px;
+
+  }
+
+  @media (max-width: 768px) {
+    .hero-section{
+      min-height: 120vh;
+      min-width: 120vw;
+    }
+    
+  .image-container img {
+    max-width: 160px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.687);
+    margin-bottom:0;
+    margin-right:0px;
+
+  }
+    .content {
+      flex-direction: column;
+      text-align: center;
+      font-size: 30px;
+      /* text-align: justify; */
+      margin: 1px;
+    }
+    .contentpara{
+      text-align: justify;
+    }
+    .btn-group{
+      margin-left:10%;
+    }
+    .name {
+        font-size: 3.5rem;
+    }
+    .image-container img {
+      margin-top: 20px;
+    }
+  
+    .text-content h1 {
+      font-size: 2.5rem;
+    }
+  
+    .text-content h2 {
+      font-size: 1.1rem;
+    }
+  }
+
+
+  
+  .name:hover {
+    color: #ffbf00; 
+    text-shadow: 5px 5px 15px rgba(255, 165, 0, 0.7), 0px 0px 20px rgba(255, 223, 0, 0.6); 
+  }
+ 
+.profession {
+  font-size: 2.5rem; 
+  font-weight: 700; 
+  color: #444444;
+  line-height: 1.4;
+  position: relative;
+}
+
+.profession .static-text {
+  color: #222222; 
+  font-weight: 800; 
+  display: inline-block;
+}
+
+.typo {
+  font-size: 2.5rem;
+  font-weight: 800;
+  /* background: linear-gradient(90deg, #229fc5, #3b82f6, #f43f5e, #facc15);  */
+  
+  color: transparent;
+  animation: gradient-shift 3s infinite;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); 
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.typo span {
+  color: #ffb700; 
+  font-style: italic;
+  text-shadow: #222222;
+  font-size: inherit;
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .hero-section{
+    height:70vh;
+  }
+
+  .profession {
+    font-size: 2rem; 
+  }
+
+  .typo {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .profession {
+    font-size: 1.8rem;
+  }
+
+  .typo {
+    font-size: 1.8rem;
+  }
+} 
+
+/* Button group container */
+.custom-btn-group {
+  display: flex;
+  gap: 25px;
+  /* justify-content: center; */
+  margin-top: 30px;
+}
+
+/* Common button styling */
+.custom-btn {
+  display: inline-block;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Initial shadow */
+}
+
+/* Primary button with gradient styling */
+.custom-btn-primary {
+  background: linear-gradient(90deg, rgb(215, 73, 255) 0%,  rgb(38, 0, 255) 100%);
+  color: white;
+  border: 1px solid rgba(0, 0, 0, 0.342);
+}
+
+.custom-btn-primary:hover {
+  background: linear-gradient(90deg, rgb(0, 48, 100) 0%, rgba(82, 44, 255, 0.938) 100%);
+  color: white;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Bigger shadow on hover */
+  transform: translateY(-3px); /* Slight upward movement */
+}
+
+/* Secondary button with gradient styling */
+.custom-btn-secondary {
+  background: linear-gradient(90deg, rgb(38, 0, 255) 0%, rgb(73, 222, 255) 100%);
+  color: white;
+  border: 1px solid rgba(0, 0, 0, 0.342);
+}
+
+.custom-btn-secondary:hover {
+  background: linear-gradient(90deg, rgb(0, 48, 100) 0%, rgba(82, 44, 255, 0.938) 100%);
+  color: white;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Bigger shadow on hover */
+  transform: translateY(-3px); /* Slight upward movement */
+}
+
+

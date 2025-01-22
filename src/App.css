@@ -1,0 +1,58 @@
+body {
+  margin: 0;
+  padding: 0;
+  /* height: 100vh; */
+  background: linear-gradient(-45deg, #0b0071, #0a3fa0, #080064, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient-animation 8s ease infinite; /* Smooth transition with increased duration */
+  /* overflow: hidden; */
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Keyframes for smoother and dynamic gradient animation */
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  25% {
+    background-position: 100% 50%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  75% {
+    background-position: 0% 100%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Basic styling for the fade-in container */
+/* Basic hidden state */
+.fade-in {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease, visibility 0s 1s;
+}
+
+/* Show state when in viewport */
+.fade-in.visible {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 1s ease, visibility 0s 0s;
+}
+
+
+/* Main Content Transition */
+.main-content {
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+}
+
+.main-content.visible {
+  opacity: 1;
+}
+
+
+

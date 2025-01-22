@@ -1,0 +1,93 @@
+/* Loader Overlay with Blur */
+.loader-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* backdrop-filter: blur(8px); */
+    z-index: 9999;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+  }
+  
+  /* Centering the Loader Elements */
+  .loader-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  /* Circular Image Container */
+  .logo-circle {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 6px solid #3498db; /* Blue border around the logo */
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* The Logo Image */
+  .logo-image {
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    object-fit: cover; /* Ensure the image is contained within the circle */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  }
+  
+  /* Circular Loader Around the Logo */
+  .loader-ring {
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 6px solid #3498db;
+    border-top: 6px solid transparent;
+    animation: spin 2s linear infinite;
+  }
+  
+  /* Spin Animation */
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Text Below the Loader */
+  .loader-text {
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #3498db;
+    animation: colorChange 0.8s infinite; /* Color change animation */
+  }
+  
+  /* Color Changing Animation */
+  @keyframes colorChange {
+    0% {
+      color: #3498db; /* Blue */
+    }
+    50% {
+      color: #010db4; /* Red */
+    }
+    100% {
+      color:darkorange; /* Green */
+    }
+  }
+  

@@ -1,0 +1,191 @@
+.Main11 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1); 
+  padding: 40px;
+  margin: 30px;
+  border-radius: 20px;
+  color: white;
+  position: relative; /* For adding shine effect */
+  overflow: hidden; /* Prevents shine effect from overflowing */
+  backdrop-filter: blur(20px); /* Glass blur effect */
+  -webkit-backdrop-filter: blur(15px); /* Safari support */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); /* Soft shadow for depth */
+}
+
+/* Shine effect */
+.Main11::before {
+  content: "";
+  position: absolute;
+  top: -50%; /* Start off-screen */
+  left: -50%; /* Start off-screen */
+  width: 200%; /* Ensure shine covers the entire element */
+  height: 200%; /* Ensure shine covers the entire element */
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.2));
+  transform: rotate(45deg);
+  animation: shine-animation 5s ease-in-out infinite; /* Smooth and continuous shine effect */
+  opacity: 0.5; /* Subtle shine effect */
+  z-index: 0; /* Place it behind the content */
+}
+
+/* Shine animation */
+@keyframes shine-animation {
+  0% {
+    transform: translateX(-150%) rotate(45deg);
+  }
+  50% {
+    transform: translateX(0%) rotate(45deg);
+  }
+  100% {
+    transform: translateX(150%) rotate(45deg);
+  }
+}
+
+
+
+/* Box container */
+.box1 {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  background-color: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Social buttons container */
+.social-btns {
+  display: flex;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.social-btns .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  font-size: 24px;
+  color: white;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  text-decoration: none;
+}
+
+.social-btns .btn:hover {
+  transform: scale(1.2);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.social-btns .active {
+  border: 3px solid #ffffff;
+}
+
+/* Form container */
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  margin-bottom: 15px;
+  border-radius: 15px;
+  background: rgb(0,71,171);
+background: linear-gradient(159deg, rgba(0,71,171,1) 0%, rgba(28,169,201,1) 100%);}
+
+.in {
+  width: 100%;
+  margin-top: 12px;
+  padding: 14px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #030303;
+  background-color: #ffffff;
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: #6a11cb;
+  box-shadow: 0 4px 12px rgba(106, 17, 203, 0.3);
+  outline: none;
+}
+.Subutton{
+  background: rgb(0,51,102);
+background: linear-gradient(159deg, rgba(0,51,102,1) 0%, rgba(15,82,186,1) 100%);
+font-weight: 800;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.59), 0 1px 3px rgba(0, 0, 0, 0.442); /* Adds a subtle shadow */
+
+
+}
+form button {
+  width: 100%;
+  max-width: 200px;
+  margin-top: 16px;
+  padding: 14px;
+  background-color: #6a11cb;
+  /* color: white; */
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+form button:hover {
+  background-color: #2575fc;
+  transform: translateY(-3px);
+}
+
+/* Typography */
+.hi1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #333;
+}
+
+.newP {
+  font-size: 1.2rem;
+  color: #ffffff;
+  margin-top: 8px;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .Main11{
+    min-width: 120vw;
+    padding: 20px;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  form {
+    margin-bottom: 0px;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .social-btns .btn {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+
+  form button {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+}

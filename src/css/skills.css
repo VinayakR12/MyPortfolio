@@ -1,0 +1,218 @@
+.skills-container {
+    margin: 30px;
+    border-radius: 20px;
+    padding: 2rem 0;
+    color: #fff; /* Bright text for contrast */
+    align-items: center;
+    align-content: center;
+    background: rgba(255, 255, 255, 0.1); /* Transparent background for glass effect */
+    backdrop-filter: blur(20px); /* Glass blur effect */
+    -webkit-backdrop-filter: blur(15px); /* Safari support */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6); /* Stronger shadow for depth */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Glass edge for realism */
+    position: relative; /* Ensure shine effect stays above content */
+    text-align: center; /* Align text */
+    overflow: hidden; /* Hide content that overflows */
+  }
+  
+  /* Glass Shine Effect */
+  .skills-container::before {
+    content: "";
+    position: absolute;
+    top: -50%; /* Start off-screen */
+    left: -50%; /* Start off-screen */
+    width: 200%; /* Make sure the shine covers the element */
+    height: 200%; /* Make sure the shine covers the element */
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.2));
+    transform: rotate(45deg);
+    animation: shine-animation 5s ease-in-out infinite; /* Continuous animation */
+    opacity: 0.6; /* Subtle shine effect */
+    z-index: 0; /* Behind the content */
+  }
+  
+  /* Shine animation */
+  @keyframes shine-animation {
+    0% {
+      transform: translateX(-150%) rotate(45deg);
+    }
+    50% {
+      transform: translateX(0%) rotate(45deg);
+    }
+    100% {
+      transform: translateX(150%) rotate(45deg);
+    }
+  }
+  
+
+
+.title1{
+    font-weight: 800; 
+    padding: 10px;
+
+    text-align: center; 
+    margin-bottom: 20px;
+    color: #ffffff; /* Text color */
+    border-radius: 12px; /* Smooth rounded corners */
+    box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.676);
+    text-shadow: 3px 3px 5px rgba(11, 0, 0, 0.806); /* Subtle text shadow */
+   
+    background: linear-gradient(159deg, rgba(8,146,208,1) 0%, rgba(75,0,130,1) 100%);
+    
+    font-size: 2rem;
+    margin-right: 25%;
+    margin-left: 25%;
+   
+  }
+  
+
+@keyframes pop-in {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+  
+    
+
+.badge-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.badge {
+    position: relative;
+    width: 6em;
+    height: 6em;
+    border-radius: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    box-shadow: 8px 10px 12px 3px rgba(0, 0, 0, 0.43);
+}
+
+.badge:hover {
+    box-shadow: 0px 0px 25px 5px rgba(255, 255, 255, 0.8);
+    transform: scale(1.1);
+}
+
+.icon-container {
+    width: 70px;
+    height: 70px;
+    background: white;
+    border-radius: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-container img {
+    width: 40px;
+    height: 40px;
+}
+
+.icon-container {
+    width: 70px;
+    height: 70px;
+    background: white;
+    border-radius: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-container i.fab, .icon-container i.fas {
+    font-size: 2.6em;
+    color: inherit;
+}
+.html-badge { background: darkorange; color: orange; }
+.blue-badge { background: dodgerblue; color: deepskyblue; }
+.css-badge { background: dodgerblue; color: deepskyblue; }
+.javascript-badge { background: gold; color: gold; }
+.android-badge  { background: green; color: greenyellow; }
+
+.php-badge { background: #777bb3; color:#563d7c; }
+.node-badge { background: #68a063;color:darkgreen}
+.python-badge { background: #306998; }
+.vite-badge { background: #64b5f6; }
+.bootstrap-badge { background: #563d7c; color:blueviolet }
+.java-badge { background:gray; color:darkblue }
+.github-badge { background: #24292f; color:darkviolet}
+.docker-badge { background: #0db7ed; color:aqua }
+.react-badge { background: #61dafb; }
+.c-badge { background: silver; color:darkolivegreen}
+.linux-badge { background:#24292f; color:#092e20 }
+.aws-badge { background: #ff9900; color:#000000 }
+.materialui-badge { background: #1976d2;  }
+.tensorflow-badge { background: #ff6f00; }
+.cloud-badge { background: #5c6bc0; color:rgb(203, 203, 255)}
+.figma-badge { background: #f24e1e; }
+.unity-badge { background: #000000; color:#000000 }
+.django-badge { background: #092e20; }
+.mongodb-badge { background: #47a248; }
+.tailwind-badge { background: #38bdf8; }
+.sql-badge { background: #4479a1; }
+.firebase-badge { background: #ff9e2c; }
+
+/* Hover Effect */
+.badge:hover {
+    transform: scale(1.1);
+    box-shadow: 1px 1px 10px 10px rgba(255, 255, 255, 0.525);
+}
+
+/* Responsive Design */
+
+
+@media (max-width: 480px) {
+    .badge {
+        width: 4.5em;
+        height: 4.5em;
+    }
+
+    .icon-container img {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+
+
+/* Additional responsiveness */
+@media (max-width: 768px) {
+    .title1 {
+        font-size: 2rem; 
+        width: 400px;
+        left:-90px;
+        padding: 15px 30px; 
+    }
+    .skills-container {
+        min-width: 120vw;
+    }
+    .badge {
+        width: 4em;
+        height: 4em;
+    }
+ 
+    .icon-container {
+        width: 54px;
+        height: 55px;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .title1 {
+        font-size: 1.5rem; /* Even smaller font size for very small screens */
+        padding: 10px 20px; /* Further reduced padding for mobile */
+    }
+}

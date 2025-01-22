@@ -1,0 +1,193 @@
+.title3{
+ margin-top: 20px;
+  font-weight: 800; 
+  padding: 10px;
+  text-align: center; 
+  margin-bottom: 20px;
+  color: #ffffff; /* Text color */
+  border-radius: 12px; /* Smooth rounded corners */
+  box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.676);
+  text-shadow: 3px 3px 5px rgba(11, 0, 0, 0.806); /* Subtle text shadow */
+ max-width: 400px;
+ margin-bottom: 10px;
+  background: linear-gradient(159deg, rgba(8,146,208,1) 0%, rgba(75,0,130,1) 100%);
+  font-size: 2rem;
+  margin-right: 25%;
+  left: 30%;
+ 
+}
+
+ .main2 {
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+ 
+  margin: 30px;
+  border-radius: 20px;
+  min-height: 50vh;
+  position: relative; /* For adding shine effect */
+  overflow: hidden; /* Prevents shine effect from overflowing */
+  backdrop-filter: blur(20px); /* Glass blur effect */
+  -webkit-backdrop-filter: blur(15px); /* Safari support */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); /* Soft shadow for depth */
+}
+
+/* Shine effect */
+.main2::before {
+  content: "";
+  position: absolute;
+  top: -50%; /* Start off-screen */
+  left: -50%; /* Start off-screen */
+  width: 200%; /* Ensure shine covers the entire element */
+  height: 200%; /* Ensure shine covers the entire element */
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.2));
+  transform: rotate(45deg);
+  animation: shine-animation 5s ease-in-out infinite; /* Smooth and continuous shine effect */
+  opacity: 0.5; /* Subtle shine effect */
+  z-index: 0; /* Place it behind the content */
+}
+
+/* Shine animation */
+@keyframes shine-animation {
+  0% {
+    transform: translateX(-150%) rotate(45deg);
+  }
+  50% {
+    transform: translateX(0%) rotate(45deg);
+  }
+  100% {
+    transform: translateX(150%) rotate(45deg);
+  }
+}
+
+
+.container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  transform-style: preserve-3d;
+  perspective: 500px;
+  margin: auto;
+}
+.container .box {
+  position: relative;
+  width: 275px;
+  height: 275px;
+  background: #000;
+  transition: 0.5s;
+  transform-style: preserve-3d;
+  overflow: hidden;
+  margin-right: 15px;
+  margin-top: 45px;
+  margin-bottom: 20px;
+}
+.container:hover .box {
+  transform: rotateY(25deg);
+  width: 365px;
+  margin-bottom: 30px;
+
+}
+.container .box:hover ~ .box {
+  transform: rotateY(-25deg);
+}
+.container .box:hover {
+  transform: rotateY(0deg) scale(1.25);
+  z-index: 1;
+  box-shadow: 0 25px 40px rgba(0,0,0,0.5);
+}
+.container .box .imgBx {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.container .box .imgBx:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg,rgba(16, 16, 16, 0.41),#000);
+  z-index: 1;
+  opacity: 0;
+  transition: 0.5s;
+  mix-blend-mode: multiply;
+}
+.container .box:hover .imgBx:before {
+  opacity: 1;
+}
+.container .box .imgBx img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.container .box .content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: flex;
+  padding: 20px;
+  align-items: flex-end;
+  box-sizing: border-box;
+}
+.container .box .content h2 {
+  color: #fff;
+  transition: 0.5s;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  font-size: 20px;
+  transform: translateY(200px);
+  transition-delay: 0.3s;
+}
+.container .box:hover .content h2 {
+  transform: translateY(0px);
+}
+.container .box .content p {
+  color: #fff;
+  transition: 0.5s;
+  font-size: 14px;
+  transform: translateY(200px);
+  transition-delay: 0.4s;
+}
+.container .box:hover .content p {
+  transform: translateY(0px);
+}
+
+@media(max-width :785px){
+  .main2{
+    min-width: 120vw;
+    padding-bottom: 10px;
+  }
+  .title3{
+    min-width: 400px;
+    margin-bottom: 30px;
+     margin-left:-110px;
+    
+  }
+
+  .container .box{
+  margin:4px;
+  width: 190px;
+  height: 190px;
+  }
+  .container:hover .box {
+    
+    width: 335px;
+    height: 270px;
+    margin:10px;
+    margin-bottom: 80px;
+    transform: rotateY(15deg);
+  }
+ 
+  .container .box:hover ~ .box {
+    transform: rotateY(-15deg);
+  }
+} 
